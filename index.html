@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainframe Developer | BFSI Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e3c72;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .about-text h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .experience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-card h4 {
+            color: #1e3c72;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .company {
+            color: #2a5298;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-card .duration {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #e8f0fe;
+            color: #1e3c72;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-role {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .project-body {
+            padding: 1.5rem;
+        }
+
+        .project-body p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .project-type {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Education Section */
+        .education-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #1e3c72;
+        }
+
+        .education-item h3 {
+            color: #1e3c72;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .institution {
+            color: #2a5298;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-item .year {
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .percentage {
+            background: #e8f0fe;
+            color: #1e3c72;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            display: inline-block;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #1e3c72;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .read-more:hover {
+            color: #ffd700;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Mainframe Developer</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Mainframe Developer</h1>
+            <p class="subtitle">BFSI Domain Specialist | 4+ Years Experience</p>
+            <p class="description">Experienced in building robust mainframe solutions for Banking, Financial Services, and Insurance applications. Proficient in COBOL, JCL, DB2, IMS, and CICS with a proven track record at Infosys and TCS.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Passionate about mainframe technology and financial systems</p>
+            
+            <div class="about-content">
+                <div>
+                    <div class="about-text">
+                        <h3>Professional Summary</h3>
+                        <p>I am a dedicated Mainframe Developer with 4.1 years of experience specializing in BFSI domain applications. My expertise lies in developing and maintaining critical banking and financial systems using legacy mainframe technologies.</p>
+                        <p>Currently pursuing MCA from Madras University (Final Project), I combine academic knowledge with real-world enterprise experience from leading IT services companies.</p>
+                        <p>Based in Chennai, I have successfully delivered multiple high-impact projects across retirement applications, ETL reporting systems, payment processing, and card management systems for global banking clients.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="experience-card">
+                        <h4>Mainframe Developer</h4>
+                        <p class="company">Tata Consultancy Services (TCS)</p>
+                        <p class="duration">July 2024 - Present</p>
+                        <p>Working on enterprise mainframe solutions for BFSI clients, focusing on system optimization and application development.</p>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <h4>Mainframe Developer / Analyst</h4>
+                        <p class="company">Infosys Limited</p>
+                        <p class="duration">July 2021 - July 2024 (3 Years)</p>
+                        <p>Developed and maintained critical BFSI applications including retirement systems, ETL reporting, payment processing, and card management solutions.</p>
+                    </div>
+                    
+                    <div class="experience-card">
+                        <h4>Software Engineer Trainee</h4>
+                        <p class="company">Baleen Media, Chennai</p>
+                        <p class="duration">2019 - 2021</p>
+                        <p>Built LOB application for advertisement company using VB.NET and MySQL, managing end-to-end operations from quotation to finance transactions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Comprehensive mainframe and development expertise</p>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">COBOL</span>
+                        <span class="skill-tag">JCL</span>
+                        <span class="skill-tag">CICS</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">VB.NET</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Database Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">DB2</span>
+                        <span class="skill-tag">IMS</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQLite3</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">QWS3270</span>
+                        <span class="skill-tag">Xpeditor</span>
+                        <span class="skill-tag">File Aid</span>
+                        <span class="skill-tag">File Manager</span>
+                        <span class="skill-tag">IBM Developer for Z/Os</span>
+                        <span class="skill-tag">GIT</span>
+                        <span class="skill-tag">Bitbucket</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Domain Expertise</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">BFSI Applications</span>
+                        <span class="skill-tag">Banking Systems</span>
+                        <span class="skill-tag">Payment Processing</span>
+                        <span class="skill-tag">Card Management</span>
+                        <span class="skill-tag">ETL Reporting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Professional Projects</h2>
+            <p class="section-subtitle">Delivering enterprise solutions for global banking clients</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Retirement Application</h3>
+                        <p class="project-role">Role: Mainframe Developer</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed and maintained retirement planning and management system for financial institutions, handling complex calculations and member data management.</p>
+                        <span class="project-type">BFSI Application</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>ETL Reporting Application</h3>
+                        <p class="project-role">Role: Mainframe Analyst</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Designed and implemented ETL processes for generating critical business reports, ensuring data accuracy and timely delivery of financial insights.</p>
+                        <span class="project-type">BFSI Application</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>GBS Payments, UK</h3>
+                        <p class="project-role">Role: Mainframe Developer</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Contributed to payment processing system for UK banking client, ensuring secure and efficient transaction handling and compliance with regulatory standards.</p>
+                        <span class="project-type">BFSI Application</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Debit Cards Management System</h3>
+                        <p class="project-role">Role: Mainframe Developer</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed card management and tokenization solutions, implementing secure card lifecycle management from issuance to deactivation.</p>
+                        <span class="project-type">BFSI Application</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Crop Yield Prediction</h3>
+                        <p class="project-role">Academic Project</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Developed machine learning model using Python, SQLite3, and Streamlit for predicting crop yields based on various agricultural parameters.</p>
+                        <span class="project-type">Data Mining</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>LOB Advertisement Application</h3>
+                        <p class="project-role">Internship Project</p>
+                    </div>
+                    <div class="project-body">
+                        <p>Built comprehensive business application managing complete advertisement company operations including quotations, work orders, invoicing, and performance metrics using VB.NET and MySQL.</p>
+                        <span class="project-type">Enterprise Application</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">Academic background and achievements</p>
+            
+            <div class="education-timeline">
+                <div class="education-item">
+                    <h3>Master of Computer Applications (MCA)</h3>
+                    <p class="institution">Madras University</p>
+                    <p class="year">Currently Pursuing - Final Project</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p class="institution">AM Jain College, Chennai</p>
+                    <p class="year">Completed: 2021</p>
+                    <span class="percentage">85.23%</span>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Higher Secondary Education</h3>
+                    <p class="institution">PSBB Higher Secondary School, Mangadu</p>
+                    <p class="year">2016 - 2018</p>
+                    <span class="percentage">89%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title">Blog & Insights</h2>
+            <p class="section-subtitle">Sharing knowledge about mainframe development and BFSI technology</p>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">📝</div>
+                    <div class="blog-content">
+                        <h3>Modern COBOL Development Practices</h3>
+                        <p class="blog-meta">Coming Soon</p>
+                        <p>Exploring best practices and modern approaches to COBOL development in enterprise environments, including code maintainability and performance optimization.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">💳</div>
+                    <div class="blog-content">
+                        <h3>Card Tokenization in Banking Systems</h3>
+                        <p class="blog-meta">Coming Soon</p>
+                        <p>Understanding the implementation of secure card tokenization systems and their role in modern payment processing infrastructure.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">🔄</div>
+                    <div class="blog-content">
+                        <h3>ETL Best Practices for Mainframe</h3>
+                        <p class="blog-meta">Coming Soon</p>
+                        <p>Lessons learned from implementing ETL reporting solutions on mainframe platforms, focusing on efficiency and data integrity.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss mainframe development opportunities</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📍 Location</h4>
+                    <p>Chennai, Tamil Nadu, India</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>💼 Current Role</h4>
+                    <p>Mainframe Developer at TCS</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4>🎓 Education</h4>
+                    <p>MCA (Final Project) - Madras University</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mainframe Developer Portfolio. All rights reserved.</p>
+            <p>Specializing in BFSI Applications | COBOL | DB2 | IMS | CICS</p>
+        </div>
+    </footer>
+</body>
+</html>
